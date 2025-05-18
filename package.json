@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A survival game where you dodge lasers",
   "license": "ISC",
-  "author": "Elliot",
+  "author": "LazerSphere",
   "type": "commonjs",
   "main": "main.js",
   "scripts": {
