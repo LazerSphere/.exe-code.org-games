@@ -1,7 +1,7 @@
 # .exe-code.org-games
 Used to play games made by students such as me in code.org as a standalone application/ .exe
 
-Basic Files and Assets included in each branch for separate games
+Basic Files and Assets included in each Branch. Download Links in HTML and Main Branch
 
 Created: 5/17/2025 Updated: 5/18/2025
 
