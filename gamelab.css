@@ -1,0 +1,579 @@
+/* Add these rules to ensure html and body fill the viewport */
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Prevent scrollbars */
+}
+
+/* Styles to explicitly hide the controller elements */
+#soft-buttons,
+#studio-dpad, /* Assuming #studio-dpad might be generated */
+#studio-buttons, /* Assuming #studio-buttons might be generated */
+#studio-dpad-container /* Hide the container you had */
+ {
+    display: none !important; /* Use !important to override any conflicting styles */
+}
+
+
+/* --- Your original gamelab.css code starts here --- */
+
+/* stylelint-disable import-notation */
+/*
+   Font Awesome S3 Bucket URLs
+   Current version: 6.6.0
+   If you are changing the location of these files,
+   see the readme in this directory for more detail on manual steps to take when uploading new files.
+ */
+#debugResizeBar {
+  width: 100%;
+  height: 13px;
+  line-height: 13px;
+  color: #c6cacd;
+  font-size: 24px;
+  text-align: center;
+  cursor: ns-resize;
+  white-space: nowrap;
+}
+
+#debug-buttons {
+  display: inline;
+  white-space: normal;
+}
+
+.debugger_button {
+  border: 1px solid #0094ca;
+  background-color: #0094ca;
+  color: #fff;
+  margin-left: 0;
+  margin-right: 3px;
+  padding: 3px 6px;
+  font-size: 14px;
+  min-width: 120px;
+}
+.debugger_button:disabled {
+  cursor: not-allowed;
+}
+.debugger_button:disabled:active {
+  border: none !important;
+}
+
+#continueButton {
+  border-color: #ffa400;
+  background-color: #ffa400;
+}
+
+.debugger_button:focus {
+  outline-style: none;
+}
+
+.debugger_button > img {
+  float: left;
+  opacity: 1;
+}
+
+#debug-area {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 35px;
+  padding: 0 10px;
+  background-color: #fff;
+  border-bottom: 1px solid #c6cacd;
+}
+
+#error-display-wrapper {
+  margin-right: 10px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+#error-display {
+  font-weight: bold;
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+#show-animation-area {
+  display: flex;
+  align-items: center;
+  height: 35px;
+  padding: 0 10px;
+  background-color: #fff;
+  border-bottom: 1px solid #c6cacd;
+}
+
+#show-animation-area button {
+  border: 1px solid #0094ca;
+  background-color: #0094ca;
+  color: #fff;
+  margin-left: 0;
+  margin-right: 3px;
+  padding: 3px 6px;
+  font-size: 14px;
+}
+
+#show-animation-area button:disabled {
+  cursor: not-allowed;
+}
+
+#show-animation-area button:focus {
+  outline-style: none;
+}
+
+#sprite-info {
+  padding: 10px;
+  background-color: #fff;
+  border-bottom: 1px solid #c6cacd;
+}
+
+#sprite-info p {
+  margin: 5px 0;
+}
+
+#sprite-info strong {
+  display: inline-block;
+  width: 60px;
+}
+
+#show-coords-area {
+  display: flex;
+  align-items: center;
+  height: 35px;
+  padding: 0 10px;
+  background-color: #fff;
+  border-bottom: 1px solid #c6cacd;
+}
+
+#show-coords-area label {
+  margin-right: 10px;
+}
+
+#show-coords-area input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+#show-coords-area span {
+  font-weight: bold;
+}
+
+#grid-area {
+  display: flex;
+  align-items: center;
+  height: 35px;
+  padding: 0 10px;
+  background-color: #fff;
+  border-bottom: 1px solid #c6cacd;
+}
+
+#grid-area label {
+  margin-right: 10px;
+}
+
+#grid-area input[type="number"] {
+  width: 50px;
+  margin-right: 5px;
+}
+
+#grid-area button {
+  border: 1px solid #0094ca;
+  background-color: #0094ca;
+  color: #fff;
+  margin-left: 0;
+  margin-right: 3px;
+  padding: 3px 6px;
+  font-size: 14px;
+}
+
+#grid-area button:focus {
+  outline-style: none;
+}
+
+/* Original styles for soft-buttons - these will be overridden by the display: none !important rule above */
+#soft-buttons {
+  display: none;
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  width: 150px;
+  height: 100px;
+  padding: 10px;
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 10px;
+}
+
+#soft-buttons .arrow {
+  display: block;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #efefef;
+  background-color: #fff;
+  box-shadow: 1px 1px 1px 0 #7f7f7f;
+  border-radius: 5px;
+}
+
+#soft-buttons .arrow:active:not(:disabled) {
+  border: 1px solid #9f9f9f;
+  box-shadow: none;
+}
+
+#soft-buttons .arrow:disabled {
+  opacity: 0.5;
+}
+
+#soft-buttons #leftButton {
+  top: 45px;
+  left: 10px;
+}
+
+#soft-buttons #rightButton {
+  top: 45px;
+  left: 80px;
+}
+
+#soft-buttons #upButton {
+  top: 10px;
+  left: 45px;
+}
+
+#soft-buttons #downButton {
+  top: 80px;
+  left: 45px;
+}
+
+#soft-buttons .a-b {
+  display: block;
+  position: absolute;
+  width: 40px;
+  height: 40px;
+  border: 1px solid #efefef;
+  background-color: #fff;
+  box-shadow: 1px 1px 1px 0 #7f7f7f;
+  border-radius: 20px;
+}
+
+#soft-buttons .a-b:active:not(:disabled) {
+  border: 1px solid #9f9f9f;
+  box-shadow: none;
+}
+
+#soft-buttons .a-b:disabled {
+  opacity: 0.5;
+}
+
+#soft-buttons #aButton {
+  top: 25px;
+  right: 10px;
+}
+
+#soft-buttons #bButton {
+  top: 60px;
+  right: 45px;
+}
+
+
+/* Original styles for Virtual dpad/buttons - these will be overridden by the display: none !important rule above */
+#studio-dpad {
+  display: none;
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  width: 120px;
+  height: 120px;
+  background-color: rgba(0,0,0,0.5);
+  border-radius: 60px;
+}
+
+#studio-dpad-ring {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 110px;
+  height: 110px;
+  border: 1px solid #efefef;
+  border-radius: 55px;
+  box-shadow: 1px 1px 1px 0 #7f7f7f;
+}
+#studio-dpad.active #studio-dpad-ring {
+  border: 1px solid #9f9f9f;
+  box-shadow: none;
+}
+
+#studio-dpad-cone {
+  width: 0;
+  height: 0;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  border-top: 40px solid #fff;
+  position: absolute;
+  top: 40px;
+  left: 20px;
+  transform-origin: center center; /* Added to make rotations work from center */
+}
+#studio-dpad-cone.left {
+  border-top-color: #ffd080;
+  transform: rotate(-90deg);
+}
+#studio-dpad-cone.left.down {
+  transform: rotate(-140deg);
+}
+#studio-dpad-cone.left.up {
+  transform: rotate(-40deg);
+}
+#studio-dpad-cone.right {
+  border-top-color: #ffd080;
+  transform: rotate(90deg);
+}
+#studio-dpad-cone.right.down {
+  transform: rotate(140deg);
+}
+#studio-dpad-cone.right.up {
+  transform: rotate(40deg);
+}
+#studio-dpad-cone.up {
+  border-top-color: #ffd080;
+  transform: rotate(0deg);
+}
+#studio-dpad-cone.down {
+  border-top-color: #ffd080;
+  transform: rotate(180deg);
+}
+
+/* The original gamelab.css did not contain #studio-dpad-container styles,
+   but keeping this block structure consistent with other elements.
+*/
+#studio-dpad-container {
+    /* Original display: none from HTML */
+    display: none;
+}
+
+
+#studio-button-ring {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  width: 110px;
+  height: 110px;
+  border: 1px solid #efefef;
+  border-radius: 55px;
+  box-shadow: 1px 1px 1px 0 #7f7f7f;
+}
+#studio-buttons.active #studio-button-ring {
+  border: 1px solid #9f9f9f;
+  box-shadow: none;
+}
+
+#studio-button-button {
+  width: 0;
+  height: 0;
+  border-left: 40px solid transparent;
+  border-right: 40px solid transparent;
+  border-top: 40px solid #fff;
+  position: absolute;
+  top: 40px;
+  left: 20px;
+  transform-origin: center center; /* Added to make rotations work from center */
+}
+#studio-button-button.a {
+  border-top-color: #ffd080;
+  transform: rotate(-90deg);
+}
+#studio-button-button.b {
+  border-top-color: #ffd080;
+  transform: rotate(90deg);
+}
+
+
+#runButton,
+#resetButton {
+  position: relative;
+  display: inline-block;
+  width: 48%;
+  max-width: 150px;
+  height: 25px;
+  margin: 0 1% 0 0;
+  padding: 0;
+  border: 1px solid rgba(0,0,0,0);
+  border-radius: 5px;
+  background-color: #fff;
+  font-family: 'Gotham 5r', sans-serif;
+  font-size: 13px;
+  text-align: center;
+  color: #000;
+  text-decoration: none;
+  line-height: 25px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+#runButton:hover,
+#resetButton:hover {
+  text-decoration: underline;
+}
+
+#resetButton {
+  margin: 0 0 0 1%;
+}
+
+#runButton.running {
+  background-color: #ff0000;
+  color: #fff;
+}
+
+#resetButton.reset {
+  background-color: #ff0000;
+  color: #fff;
+}
+
+#runButton:focus,
+#resetButton:focus {
+  outline: none;
+}
+
+.white_space {
+  display: inline-block;
+  width: 100%;
+  height: 5px;
+}
+
+.level_menu {
+  display: inline-block;
+  margin: 0 1% 0 0;
+}
+
+.level_menu a {
+  display: inline-block;
+  width: 48%;
+  max-width: 150px;
+  height: 25px;
+  padding: 0;
+  border: 1px solid rgba(0,0,0,0);
+  border-radius: 5px;
+  background-color: #fff;
+  font-family: 'Gotham 5r', sans-serif;
+  font-size: 13px;
+  text-align: center;
+  color: #000;
+  text-decoration: none;
+  line-height: 25px;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.level_menu a:hover {
+  text-decoration: underline;
+}
+
+.level_menu a:focus {
+  outline: none;
+}
+
+#code {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+}
+
+#code > .blockly {
+  height: 100%;
+  width: 100%;
+}
+
+#code > .editor {
+  height: 100%;
+  width: 100%;
+}
+
+#code > .ace_editor {
+  height: 100%;
+  width: 100%;
+}
+
+#visualization {
+  position: relative;
+  overflow: hidden;
+  margin-left: 0;
+  /* The following rules are defined in _app-specific-styles.scss
+   * They are commented out here because they break the layout in a dev environment
+  display: flex;
+  flex-direction: column;
+  */
+}
+
+#visualization > .droppable {
+  width: 100%;
+  height: 100%;
+}
+
+.droppable {
+  background-color: #fff;
+}
+
+.droppable canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* Sprite properties */
+#sprite-properties {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  margin-top: 20px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  font-family: sans-serif;
+  font-size: 14px;
+}
+
+#sprite-properties h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+#sprite-properties div {
+  margin-bottom: 5px;
+}
+
+#sprite-properties label {
+  margin-right: 5px;
+  font-weight: bold;
+}
+
+#sprite-properties input[type="number"] {
+  width: 50px;
+  padding: 2px;
+  border: 1px solid #ccc;
+}
+
+#sprite-properties button {
+  margin-top: 10px;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+#sprite-properties button:hover {
+  background-color: #0056b3;
+}
+
+#sprite-properties button:active {
+  background-color: #004085;
+}
+
+#sprite-properties button:focus {
+  outline: none;
+}
