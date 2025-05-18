@@ -5,4 +5,4 @@ Basic Files and Assets included
 
 Created: 5/17/2025 Updated: 5/18/2025
 
-Go To the DownloadGame.html file download and run the html and follow the instruction shown there.
+Go To the DownloadGames.html file download and run the html and follow the instruction shown there.
