@@ -1,0 +1,17 @@
+https://drive.google.com/file/d/16Cn_U7QO8bnKuk7vw8LR3SWNEKMjx7wE/view?usp=sharing
+
+- Click the link above to go to the Google Drive page.
+
+- On the Google Drive page, click the download button.
+
+- Once downloaded, extract all and unzip the folder.
+
+- Open the folder
+
+- Open the 'dist' folder.
+
+- From 'dist', open the 'win-unpacked' folder.
+
+- You can then run the application called 'alien-survival'.
+
+- Optionally, drag and drop the application file into your taskbar for easy access.
